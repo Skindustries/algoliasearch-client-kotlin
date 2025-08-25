@@ -14,6 +14,20 @@ kotlin {
   explicitApi()
   jvm()
 
+  js(IR) {
+    browser {
+      testTask {
+        useKarma {
+          useChromeHeadless()
+          useChrome()
+        }
+      }
+    }
+    nodejs {}
+    useEsModules()
+    generateTypeScriptDefinitions()
+  }
+
   if (HostManager.hostIsMac) {
     iosX64()
     iosArm64()
@@ -52,6 +66,19 @@ kotlin {
       dependencies {
         implementation(libs.kotlin.test.junit)
         implementation(libs.ktor.client.okhttp)
+      }
+    }
+
+    val jsTest by getting {
+      dependencies {
+        implementation(libs.kotlin.test.js)
+      }
+    }
+
+    val jsMain by getting {
+      dependencies {
+        implementation(libs.ktor.client.js)
+        implementation(npm("crypto-js", "4.2.0"))
       }
     }
 
