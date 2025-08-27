@@ -19,20 +19,16 @@ import kotlin.jvm.JvmInline
  * - [List<HighlightResult>] - *[HighlightResult.of]*
  * - [Map<kotlin.String, HighlightResult>] - *[HighlightResult.of]*
  */
-@JsExport
 @Serializable(HighlightResultSerializer::class)
 public sealed interface HighlightResult {
-  @JsExport
   @Serializable
   @JvmInline
   public value class HighlightResultOptionValue(public val value: HighlightResultOption) : HighlightResult
 
-  @JsExport
   @Serializable
   @JvmInline
   public value class MapOfkotlinStringHighlightResultValue(public val value: Map<kotlin.String, HighlightResult>) : HighlightResult
 
-  @JsExport
   @Serializable
   @JvmInline
   public value class ListOfHighlightResultValue(public val value: List<HighlightResult>) : HighlightResult
