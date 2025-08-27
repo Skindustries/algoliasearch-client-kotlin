@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.konan.target.HostManager
+import java.util.Properties
 
 plugins {
   kotlin("multiplatform")
@@ -91,4 +92,36 @@ kotlin {
       }
     }
   }
+}
+
+// Load local.properties
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use { stream -> localProperties.load(stream) }
+}
+
+val githubPackagesPassword: String? = findProperty("githubPackagesPassword") as String?
+    ?: localProperties.getProperty("githubPackagesPassword")
+
+publishing {
+  repositories {
+    maven {
+      name = "githubPackages"
+      url = uri("https://maven.pkg.github.com/Skindustries/algoliasearch-client-kotlin")
+      credentials {
+        username = "Skindustries"
+        password = githubPackagesPassword
+      }
+    }
+  }
+}
+
+mavenPublishing {
+  // Define coordinates for the published artifact
+  coordinates(
+    groupId = "nl.skindustries",
+    artifactId = "algoliasearch-client-kotlin",
+    version = "3.26.0"
+  )
 }

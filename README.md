@@ -1,3 +1,29 @@
+# Algolia Kotlin Multiplatform Client (Fork with JavaScript Support)
+
+> **Note:** This is a fork of the [official Algolia Kotlin client](https://github.com/algolia/algoliasearch-client-kotlin) with added JavaScript support for Kotlin Multiplatform projects.
+
+
+## 📦 Publishing New Versions
+
+To publish a new version of this library, you need to:
+
+1. **Add GitHub Token**: Create a GitHub Personal Access Token with the following scopes:
+  - `write:packages`
+  - `read:packages`
+  - `repo`
+
+2. **Configure local.properties**: Add the token to your `local.properties` file:
+   ```properties
+   githubPackagesPassword=your_github_token_here
+   ```
+
+3. **Publish**: Run the publishing command to deploy to GitHub Packages
+   ```
+   gradle publishAllPublicationsToGithubPackagesRepository
+   ```
+
+For a detailed tutorial on publishing Kotlin Multiplatform libraries with GitHub Packages, see: [Publishing Private Kotlin Multiplatform Libraries with GitHub Packages](https://proandroiddev.com/publishing-private-kotlin-multiplatform-libraries-with-github-packages-4cae23994020)
+
 <p align="center">
   <a href="https://www.algolia.com">
     <img alt="Algolia for Kotlin" src="https://raw.githubusercontent.com/algolia/algoliasearch-client-common/master/banners/kotlin.png" >
