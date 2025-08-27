@@ -22,7 +22,6 @@ import kotlin.js.JsExport
  * @param words Number of matched words.
  * @param promotedByReRanking Whether the record is re-ranked.
  */
-@JsExport
 @Serializable
 public data class RankingInfo(
 
