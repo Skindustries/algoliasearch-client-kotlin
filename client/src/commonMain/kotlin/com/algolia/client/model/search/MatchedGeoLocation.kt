@@ -3,6 +3,7 @@ package com.algolia.client.model.search
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 
 /**
  * MatchedGeoLocation
@@ -11,6 +12,7 @@ import kotlinx.serialization.json.*
  * @param lng Longitude of the matched location.
  * @param distance Distance between the matched location and the search location (in meters).
  */
+@JsExport
 @Serializable
 public data class MatchedGeoLocation(
 

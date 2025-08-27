@@ -3,6 +3,7 @@ package com.algolia.client.model.composition
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 
 /**
  * Snippets that show the context around a matching search query.
@@ -10,6 +11,7 @@ import kotlinx.serialization.json.*
  * @param `value` Highlighted attribute value, including HTML tags.
  * @param matchLevel
  */
+@JsExport
 @Serializable
 public data class SnippetResultOption(
 

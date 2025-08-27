@@ -3,6 +3,7 @@ package com.algolia.client.model.search
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 
 /**
  * Personalization
@@ -11,6 +12,7 @@ import kotlinx.serialization.json.*
  * @param rankingScore The score of the ranking.
  * @param score The score of the event.
  */
+@JsExport
 @Serializable
 public data class Personalization(
 

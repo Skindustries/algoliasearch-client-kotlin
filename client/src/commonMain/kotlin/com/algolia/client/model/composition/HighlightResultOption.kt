@@ -3,6 +3,7 @@ package com.algolia.client.model.composition
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 
 /**
  * Surround words that match the query with HTML tags for highlighting.
@@ -12,6 +13,7 @@ import kotlinx.serialization.json.*
  * @param matchedWords List of matched words from the search query.
  * @param fullyHighlighted Whether the entire attribute value is highlighted.
  */
+@JsExport
 @Serializable
 public data class HighlightResultOption(
 

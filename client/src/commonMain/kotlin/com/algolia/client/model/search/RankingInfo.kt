@@ -3,6 +3,7 @@ package com.algolia.client.model.search
 
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 
 /**
  * Object with detailed information about the record's ranking.
@@ -21,6 +22,7 @@ import kotlinx.serialization.json.*
  * @param words Number of matched words.
  * @param promotedByReRanking Whether the record is re-ranked.
  */
+@JsExport
 @Serializable
 public data class RankingInfo(
 

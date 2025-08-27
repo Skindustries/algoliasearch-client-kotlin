@@ -8,6 +8,7 @@ import kotlinx.serialization.builtins.*
 import kotlinx.serialization.descriptors.*
 import kotlinx.serialization.encoding.*
 import kotlinx.serialization.json.*
+import kotlin.js.JsExport
 import kotlin.jvm.JvmInline
 
 /**
@@ -18,16 +19,20 @@ import kotlin.jvm.JvmInline
  * - [Map<kotlin.String, SnippetResult>] - *[SnippetResult.of]*
  * - [SnippetResultOption]
  */
+@JsExport
 @Serializable(SnippetResultSerializer::class)
 public sealed interface SnippetResult {
+  @JsExport
   @Serializable
   @JvmInline
   public value class SnippetResultOptionValue(public val value: SnippetResultOption) : SnippetResult
 
+  @JsExport
   @Serializable
   @JvmInline
   public value class MapOfkotlinStringSnippetResultValue(public val value: Map<kotlin.String, SnippetResult>) : SnippetResult
 
+  @JsExport
   @Serializable
   @JvmInline
   public value class ListOfSnippetResultValue(public val value: List<SnippetResult>) : SnippetResult

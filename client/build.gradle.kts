@@ -41,6 +41,7 @@ kotlin {
       languageSettings {
         optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
         optIn("kotlinx.serialization.ExperimentalSerializationApi")
+        optIn("kotlin.js.ExperimentalJsExport")
       }
     }
     val commonMain by getting {

@@ -2,10 +2,12 @@
 package com.algolia.client.model.composition
 
 import kotlinx.serialization.*
+import kotlin.js.JsExport
 
 /**
  * Whether the whole query string matches or only a part.
  */
+@JsExport
 @Serializable
 public enum class MatchLevel(public val value: kotlin.String) {
 
