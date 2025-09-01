@@ -122,6 +122,6 @@ mavenPublishing {
   coordinates(
     groupId = "nl.skindustries",
     artifactId = "algoliasearch-client-kotlin",
-    version = "3.26.0"
+    version = "3.26.1"
   )
 }
